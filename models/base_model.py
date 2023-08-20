@@ -24,8 +24,11 @@ class BaseModel:
             if '__class__' in kwargs:
                 kwargs.pop('__class__')
             self.__dict__.update(kwargs)
-            self.created_at = datetime.fromisoformat(self.created_at)
-            self.updated_at = datetime.fromisoformat(self.updated_at)
+            try:
+                self.created_at = datetime.fromisoformat(self.created_at)
+                self.updated_at = datetime.fromisoformat(self.updated_at)
+            except Exception as e:
+                pass
 
     def __str__(self):
         """Returns a string representation of the instance"""
