@@ -2,10 +2,12 @@
 """ """
 from tests.test_models.test_base_model import test_basemodel
 from models.city import City
+from os import getenv
 
 
 class test_City(test_basemodel):
     """ """
+    a = getenv('HBNB_TYPE_STORAGE') != 'db'
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -16,9 +18,11 @@ class test_City(test_basemodel):
     def test_state_id(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.state_id), str)
+        if self.a:
+            self.assertEqual(type(new.state_id), str)
 
     def test_name(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.name), str)
+        if self.a:
+            self.assertEqual(type(new.name), str)

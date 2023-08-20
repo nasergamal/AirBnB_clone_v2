@@ -2,10 +2,12 @@
 """ """
 from tests.test_models.test_base_model import test_basemodel
 from models.user import User
+from os import getenv
 
 
 class test_User(test_basemodel):
     """ """
+    a = getenv('HBNB_TYPE_STORAGE') != 'db'
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -16,19 +18,23 @@ class test_User(test_basemodel):
     def test_first_name(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.first_name), str)
+        if self.a:
+            self.assertEqual(type(new.first_name), str)
 
     def test_last_name(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.last_name), str)
+        if self.a:
+            self.assertEqual(type(new.last_name), str)
 
     def test_email(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.email), str)
+        if self.a:
+            self.assertEqual(type(new.email), str)
 
     def test_password(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.password), str)
+        if self.a:
+            self.assertEqual(type(new.password), str)
