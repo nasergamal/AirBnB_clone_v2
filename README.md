@@ -143,6 +143,19 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 
 
 # HBNB - MySQL
-This repository contains a project which is the continuation of a previous project `HBNB - THE CONSOLE`. This stage incorporates `MySQL` as it database management system.
+This repository contains another project which is the continuation of a previous project `HBNB - THE CONSOLE`. This stage incorporates `MySQL` as it database management system.
 
 ---
+
+## Project tasks description
+
+| Tasks | Files | Description |
+| ----- | ----- | ----------- |
+| 0. Fork me if you can! | N/A | Fork a previous project and rename it `AirBnB_clone_v2` then update the existing readme file |
+| 1. Bug free! | N/A | Write unittests for all class defining modules |
+| 2. Console improvements | [console.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/console.py), [models/](https://github.com/nasergamal/AirBnB_clone_v2/tree/master/models), [tests/](https://github.com/nasergamal/AirBnB_clone_v2/tree/master/tests) | Update the `do_create` function in `console.py` to allow for object creation with more parameters for better functionality |
+| 3. MySQL setup development | [setup_mysql_dev.sql](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/setup_mysql_dev.sql) | create a script that prepares a MySQL server for the project environment dev |
+| 4. MySQL setup test | [setup_mysql_test.sql](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/setup_mysql_test.sql) | create a script that prepares a MySQL server for the project environment test |
+| 5. Delete object | [models/engine/file_storage.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/engine/file_storage.py) | Create a new method `def delete(self, obj=None):` to delete objects from `__objects` |
+| 6. DBStorage - States and Cities | [models/base_model.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/base_model.py), [models/city.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/city.py), [models/state.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/state.py), [models/engine/db_storage.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/engine/db_storage.py), [models/__init__.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/__init__.py) | Modify or create the listed files to take database storage |
+| 7. DBStorage - User | [models/user.py](https://github.com/nasergamal/AirBnB_clone_v2/blob/master/models/user.py) | Modify the the User to be compatible with the database storage |
