@@ -2,6 +2,7 @@
 ''' create tar of webstatic '''
 from fabric.api import local, sudo, put, env
 from time import strftime
+from os import path
 env.user = 'ubuntu'
 env.hosts = ['3.94.185.113', '54.196.42.192']
 env.key_filename = '~/.ssh/id_rsa'
@@ -9,7 +10,7 @@ env.key_filename = '~/.ssh/id_rsa'
 
 def do_deploy(archive_path):
     '''depoly to servers'''
-    if not archive_path:
+    if not path.exists(archive_path):
         return False
     try:
         put(archive_path, "/tmp/")
