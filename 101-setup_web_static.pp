@@ -23,7 +23,6 @@ $conf = "server {
 package { 'nginx':
   ensure   => 'present',
   provider => 'apt',
-  before   => Exec['first_dir']
 }
 -> file { '/data':
   ensure  => 'directory'
@@ -53,14 +52,12 @@ package { 'nginx':
   ensure => 'link',
   target => '/data/web_static/releases/test'
 }
-
 -> exec { 'chown -R ubuntu:ubuntu /data/':
   path => '/usr/bin/:/usr/local/bin/:/bin/'
 }
 
--> file {'www':
+-> file { '/etc/nginx/sites-available/default':
   ensure  => 'present',
-  path    => '/etc/nginx/sites-available/default',
   content => $conf,
 }
 
